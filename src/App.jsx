@@ -17,7 +17,8 @@ function App() {
       action: "wbsearchentities",
       format: "json",
       search: input,
-      language: "fr",
+      language: "en",
+      limit: 15,
     };
 
     axios
@@ -37,7 +38,7 @@ function App() {
   }, [input]);
 
   return (
-    <div>
+    <div className="text-slate-400 flex flex-col items-center">
       <div>
         <Header setInput={setInput} />
       </div>

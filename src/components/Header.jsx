@@ -12,7 +12,7 @@ export default function Header({ setInput }) {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center">
         <input
           type="text"
           name="Search"
