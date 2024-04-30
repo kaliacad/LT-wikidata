@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [input, setInput] = useState("null");
+  const [input, setInput] = useState(null);
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
@@ -13,6 +13,7 @@ function App() {
   useEffect(() => {
     const url = "https://www.wikidata.org/w/api.php";
     const params = {
+      origin: "*",
       action: "wbsearchentities",
       format: "json",
       search: input,
@@ -22,28 +23,26 @@ function App() {
     axios
       .get(url, { params })
       .then((response) => {
-        const responseData = response.data;
-        const finalData = responseData.search.map((entity) => ({
-          label: entity.label,
-          description: entity.description,
-          url: entity.url,
-          wd_id: entity.title,
-        }));
-        setData(finalData);
-        console.log(finalData);
+        if (response.data.search) {
+          const responseData = response.data;
+          setData(responseData);
+          setIsPending(false);
+        }
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
         setError(error);
+        setIsPending(false);
       });
-  }, []);
+  }, [input]);
 
   return (
     <div>
       <div>
         <Header setInput={setInput} />
       </div>
-      {/* <Body /> */}
+      {error && <div>Error: {error.message}</div>}
+      {data && <Body data={data} />}
     </div>
   );
 }
