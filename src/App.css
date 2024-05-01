@@ -1,3 +1,25 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.container {
+    margin: 5rem 20% 0 20%;
+}
+.haeder{
+    height: auto;
+}
+.input-div form {
+    margin: 0 10% 0 25%;
+}
+.input-div input {
+    height: 25px;
+    width: 40%;
+    border-radius: 5px;
+    z-index: 0;
+}
+.input-div button {
+    height: 31px;
+    width: 15%;
+    margin-left: 1%;
+}
+
+.research-title {
+    font-style: italic;
+    color: #504c4c;
+}

@@ -11,11 +11,12 @@ export default function Header({ setInput }) {
     setInput(search.text);
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex justify-center">
+    <div className="input-div">
+      <form onSubmit={handleSubmit(onSubmit)} className="">
         <input
           type="text"
           name="Search"
+          placeholder="Tapez ici votre recherche..."
           id="search"
           {...register("text", {
             required: true,

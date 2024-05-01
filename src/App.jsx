@@ -38,8 +38,8 @@ function App() {
   }, [input]);
 
   return (
-    <div className="text-slate-400 flex flex-col items-center">
-      <div>
+    <div className="container">
+      <div className="haeder">
         <Header setInput={setInput} />
       </div>
       {error && <div>Error: {error.message}</div>}
