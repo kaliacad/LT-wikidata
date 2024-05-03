@@ -18,7 +18,7 @@ function App() {
       format: "json",
       search: input,
       language: "en",
-      limit: 15,
+      limit: "max",
     };
 
     axios
