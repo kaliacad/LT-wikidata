@@ -39,7 +39,7 @@ export default function SearchDetails({ value }) {
 
   return (
     data && (
-      <div className="item">
+      <div style={{ display: "flex" }}>
         <div>
           {data?.claims?.P18 && (
             <img
@@ -49,9 +49,11 @@ export default function SearchDetails({ value }) {
             />
           )}
         </div>
-        <h3 className="item-title">{value.label}</h3>
-        <p>{data.descriptions?.fr?.value}</p>
-        <a href={value.concepturi}>Voir plus</a>
+        <div className="item">
+          <h3 className="item-title">{value.label}</h3>
+          <p>{data.descriptions?.fr?.value}</p>
+          <a href={value.concepturi}>Voir plus</a>
+        </div>
       </div>
     )
   );

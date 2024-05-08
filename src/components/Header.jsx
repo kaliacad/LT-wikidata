@@ -21,7 +21,6 @@ export default function Header({ setInput }) {
           {...register("text", {
             required: true,
             maxLength: 20,
-            pattern: /^[A-Za-z]+$/i,
           })}
         />
         <button type="submit">Search</button>
