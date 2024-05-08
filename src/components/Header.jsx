@@ -11,20 +11,23 @@ export default function Header({ setInput }) {
     setInput(search.text);
   };
   return (
-    <div className="input-div">
-      <form onSubmit={handleSubmit(onSubmit)} className="">
-        <input
-          type="text"
-          name="Search"
-          placeholder="Tapez ici votre recherche..."
-          id="search"
-          {...register("text", {
-            required: true,
-            maxLength: 20,
-          })}
-        />
-        <button type="submit">Search</button>
-      </form>
+    <div>
+      <img src="/wikipedia_PNG1.png" alt="" />
+      <div className="input-div">
+        <form onSubmit={handleSubmit(onSubmit)} className="">
+          <input
+            type="text"
+            name="Search"
+            placeholder="Tapez ici votre recherche..."
+            id="search"
+            {...register("text", {
+              required: true,
+              maxLength: 20,
+            })}
+          />
+          <button type="submit" className="search-btn">Search</button>
+        </form>
+      </div>
     </div>
   );
 }
