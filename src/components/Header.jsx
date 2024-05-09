@@ -1,10 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export function ResearchImage({ state }) {
+export function ResearchImage() {
   return (
     <div className="logo">
-      {state && <img src="/wikipedia_PNG1.png" alt="" />}
+      <img src="/wikipedia_PNG1.png" alt="" />
       <p>Recherche wikidata</p>
     </div>
   );
@@ -23,7 +23,7 @@ export default function Header({ setInput, state }) {
   return (
     <div className="haeder">
       <div className="input-div">
-        <ResearchImage state={state} />
+        {state && <ResearchImage />}
         <form onSubmit={handleSubmit(onSubmit)} className="">
           <input
             type="text"
