@@ -41,10 +41,16 @@ export default function SearchDetails({ value }) {
     data && (
       <div style={{ display: "flex" }} className="section-item">
         <div>
-          {data?.claims?.P18 && (
+          {data?.claims?.P18 ? (
             <img
               style={{ width: "100px" }}
               src={`https://commons.wikimedia.org/wiki/Special:FilePath/${image}`}
+              alt=""
+            />
+          ) : (
+            <img
+              style={{ width: "100px" }}
+              src="/wikidata.png"
               alt=""
             />
           )}
