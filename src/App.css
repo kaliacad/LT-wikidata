@@ -44,7 +44,7 @@ body {
 }
 
 form input {
-    width: calc(100% - 100px);
+    width: 100%;
     padding: 10px;
     padding-left: 5px;
     outline: none;
@@ -58,6 +58,22 @@ form button {
     background-color: #645cff;
     border: #fff;
     color: #fff;
-    border-radius: 0 6px 6px 0;
+    border-radius: 0 10px 10px 0;
     cursor: pointer;
+}
+.result-content {
+    margin: -10% 25% 0 25%;
+    display: flex;
+    flex-direction: column;
+}
+.section-item {
+    background: #fff;
+    width: 100%;
+    margin-top: 1%;
+    padding: 1.4%;
+    border-radius: 10px;
+}
+.section-item:hover {
+    top: 1;
+    background: #f3f4F5;
 }

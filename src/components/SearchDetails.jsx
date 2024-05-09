@@ -39,7 +39,7 @@ export default function SearchDetails({ value }) {
 
   return (
     data && (
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex" }} className="section-item">
         <div>
           {data?.claims?.P18 && (
             <img
