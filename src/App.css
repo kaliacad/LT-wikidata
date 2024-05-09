@@ -72,6 +72,7 @@ form button {
     margin-top: 1%;
     padding: 1.4%;
     border-radius: 10px;
+    gap: 5%;
 }
 .section-item:hover {
     top: 1;
