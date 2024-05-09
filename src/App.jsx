@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Footer from "./components/footer";
 
 function App() {
   const [input, setInput] = useState(null);
@@ -44,6 +45,7 @@ function App() {
       </div>
       {error && <div>Error: {error.message}</div>}
       {data && <Body data={data} />}
+      <Footer />
     </div>
   );
 }
