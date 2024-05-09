@@ -1,18 +1,16 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export function ResearchImage(){
-  return(
+export function ResearchImage({ state }) {
+  return (
     <div className="logo">
-      <img src="/wikipedia_PNG1.png" alt="" />
+      {state && <img src="/wikipedia_PNG1.png" alt="" />}
       <p>Recherche wikidata</p>
     </div>
-  )
+  );
 }
 
-
-
-export default function Header({ setInput }) {
+export default function Header({ setInput, state }) {
   const {
     register,
     formState: { errors },
@@ -20,11 +18,12 @@ export default function Header({ setInput }) {
   } = useForm();
   const onSubmit = (search) => {
     setInput(search.text);
+    state(false);
   };
   return (
-    <div className="haeder">   
+    <div className="haeder">
       <div className="input-div">
-        <ResearchImage />
+        <ResearchImage state={state} />
         <form onSubmit={handleSubmit(onSubmit)} className="">
           <input
             type="text"
@@ -36,7 +35,9 @@ export default function Header({ setInput }) {
               maxLength: 20,
             })}
           />
-          <button type="submit" className="search-btn">Search</button>
+          <button type="submit" className="search-btn">
+            Search
+          </button>
         </form>
       </div>
     </div>

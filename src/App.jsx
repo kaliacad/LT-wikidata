@@ -10,6 +10,8 @@ function App() {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
+  const [state, setState] = useState(true);
+  console.log(state);
 
   useEffect(() => {
     const url = "https://www.wikidata.org/w/api.php";
@@ -38,14 +40,18 @@ function App() {
       });
   }, [input]);
 
-  return (
+  return state ? (
     <div className="container">
       <div className="haeder">
-        <Header setInput={setInput} />
+        <Header setInput={setInput} state={() => setState()} />
       </div>
+      <Footer />
+    </div>
+  ) : (
+    <div>
+      <Header setInput={setInput} />
       {error && <div>Error: {error.message}</div>}
       {data && <Body data={data} />}
-      <Footer />
     </div>
   );
 }
